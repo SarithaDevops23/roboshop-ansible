@@ -21,8 +21,9 @@
           remote_src: yes
       - name: Copy conf file
         ansible.builtin.copy:
-          src: /root/roboshop-shell/roboshop.conf
+          src: roboshop.conf
           dest: /etc/nginx/default.d/roboshop.conf
+          remote_src: yes
       - name: Enable a timer unit for dnf-automatic
         ansible.builtin.systemd:
           name: nginx
