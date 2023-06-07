@@ -14,11 +14,11 @@
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /usr/share/nginx/html
-    remote_src: yes
 - name: Copy conf file
   ansible.builtin.copy:
     src: /roles/frontend/files/roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
+    remote_src: yes
 - name: enable and restart nginx
   ansible.builtin.systemd:
     name: nginx
