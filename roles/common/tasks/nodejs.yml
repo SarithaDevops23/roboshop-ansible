@@ -1,5 +1,5 @@
 - name: configuring nodejs repos and installing nodejs
-  ansible.builtin.yum:
+  ansible.builtin.shell:
     name: https://rpm.nodesource.com/setup_lts.x | bash
     state: installed
     disable_gpg_check: true
