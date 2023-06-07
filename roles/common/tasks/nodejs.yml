@@ -10,7 +10,7 @@
 
 - name: installing nodejs dependencies npm
   ansible.builtin.shell: npm install
-   chmod: /app
+    chmod: /app
 
 
 - name: systemd setup
