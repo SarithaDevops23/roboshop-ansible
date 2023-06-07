@@ -1,3 +1,7 @@
+  - name: setup frontend component
+    vars:
+      role_name: frontend
+ 
   - name: Install the latest version of nginx
     ansible.builtin.yum:
         name: nginx
