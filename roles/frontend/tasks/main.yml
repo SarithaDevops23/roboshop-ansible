@@ -10,10 +10,11 @@
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: directory
-- name: Unarchive a file that needs to be downloaded (added in 2.0)
+- name: Unarchive a file that needs to be downloaded
   ansible.builtin.unarchive:
     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /usr/share/nginx/html
+    remote_src: yes
 - name: Copy conf file
   ansible.builtin.copy:
     src: /roles/frontend/files/roboshop.conf
