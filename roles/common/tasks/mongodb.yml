@@ -1,0 +1,12 @@
+ - name: copying mongodb repo in order to load schema we need this
+   ansible.builtin.copy:
+     src: mongodb.repo
+     dest: /etc/yum.repos.d/mongodb.repo 
+
+ - name: installing mongodb client
+   ansible.builtin.yum:
+     name: mongodb-org-shell
+     state: installed
+
+ - name: Load mongodb schema
+   ansible.builtin.shell: mongo --host mongodb-dev.devops23.store </app/schema/{{ component }}.js
