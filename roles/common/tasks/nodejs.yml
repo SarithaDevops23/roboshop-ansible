@@ -1,8 +1,10 @@
 - name: configuring nodejs repos and installing nodejs
-  ansible.builtin.shell:
-    name: https://rpm.nodesource.com/setup_lts.x | bash
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+   
+- name: install nodejs
+  ansible.builtin.yum:
+    name: nodejs
     state: installed
-  
 
 - name: application presetup
   ansible.builtin.include_tasks:
@@ -10,7 +12,8 @@
 
 - name: installing nodejs dependencies npm
   ansible.builtin.shell: npm install
-    #chmod: /app
+  args:
+    chdir: /app
 
 
 - name: systemd setup
