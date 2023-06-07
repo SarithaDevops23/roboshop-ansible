@@ -10,7 +10,7 @@
 
 - name: installing nodejs dependencies npm
   ansible_builtin.shell: npm install
-    state: installed
+    chdir: /app
 
 - name: systemd setup
   ansible.builtin.include_tasks:
