@@ -2,7 +2,7 @@
   ansible.builtin.shell:
     name: https://rpm.nodesource.com/setup_lts.x | bash
     state: installed
-    disable_gpg_check: true
+  
 
 - name: application presetup
   ansible.builtin.include_tasks:
