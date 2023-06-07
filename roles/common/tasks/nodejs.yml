@@ -9,7 +9,8 @@
     file: application_presetup.yml
 
 - name: installing nodejs dependencies npm
-  ansible_builtin.shell: npm install
+  ansible.builtin.shell: npm install
+   chmod: /app
 
 
 - name: systemd setup
