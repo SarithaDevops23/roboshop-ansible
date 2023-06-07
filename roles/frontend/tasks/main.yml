@@ -17,7 +17,7 @@
     remote_src: yes
 - name: Copy conf file
   ansible.builtin.copy:
-    src: /roles/frontend/files/roboshop.conf
+    src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 - name: enable and restart nginx
   ansible.builtin.systemd:
