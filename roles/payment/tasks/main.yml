@@ -1,0 +1,21 @@
+- name: installing python
+  ansible.builtin.pip:
+    name:
+      - python36
+      - gcc
+      - python3-deve
+
+- name: importing application setup role
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: application_presetup
+
+- name: install dependencies
+  ansible.builtin.shell: pip3.6 install -r requirements.txt
+  args:
+    chdir: /app
+ 
+- name: importing systemd role
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd

@@ -1,0 +1,23 @@
+- name: Disable default v8.0 of mysqldb
+  ansible.builtin.shell: yum module disable mysql -y 
+
+- name: copying sql repo file into yum repos
+  ansible.builtin.copy:
+    src: mysql.repo
+    dest: /etc/yum.repos.d/mysql.repo
+
+- name: installing mysql community server
+  ansible.builtin.yum:
+    name: mysql-community-server
+    state: installed
+
+- name: mysqldb systemd starting
+  ansible.builtin.systemd:
+    name: mysqld
+    enabled: true
+    state: restarted
+
+- name: changing root password for mysql
+  community.mysql.mysql_user:
+    name: root
+    password: 'RoboShop@1'

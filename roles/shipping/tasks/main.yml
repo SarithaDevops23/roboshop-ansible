@@ -1,0 +1,33 @@
+- name: installing maven
+  ansible.builtin.yum:
+    name: maven
+    state: installed
+
+- name: importing application setup role
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: application_presetup
+
+- name: maven clean package
+  ansible.builtin.shell: mvn clean package 
+
+
+- name: install dependencies
+  ansible.builtin.shell: target/{{ component }}-1.0.jar
+  state: installed
+  args:
+    chdir: /app
+
+- name: installing mysql community version
+  ansible.builtin.yum:
+    name: mysql
+    state: installed
+
+- name: mysql - Load schema
+  ansible.builtin.shell: mysql -h mysql-dev.devops23.store -uroot -p{{ mysql_password }} < /app/schema/{{ component }}.sql
+
+
+- name: importing systemd role
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd

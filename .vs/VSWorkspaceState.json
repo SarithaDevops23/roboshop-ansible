@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\roles",
+    "\\roles\\cart\\tasks",
+    "\\roles\\cart\\vars",
+    "\\roles\\mysql\\files",
+    "\\roles\\mysql\\tasks",
+    "\\roles\\payment",
+    "\\roles\\payment\\vars",
+    "\\roles\\shipping\\tasks",
+    "\\roles\\shipping\\vars"
   ],
-  "SelectedNode": "\\C:\\Users\\user\\Source\\Repos\\roboshop-ansible",
+  "SelectedNode": "\\roles\\payment\\files",
   "PreviewInSolutionExplorer": false
 }
