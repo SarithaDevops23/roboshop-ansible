@@ -1,9 +1,10 @@
 - name: installing python
-  ansible.builtin.pip:
+  ansible.builtin.yum:
     name:
       - python36
       - gcc
-      - python3-deve
+      - python3-devel
+    state: installed 
 
 - name: importing application setup role
   ansible.builtin.import_role:
