@@ -14,7 +14,6 @@
 
 - name: install dependencies
   ansible.builtin.shell: target/{{ component }}-1.0.jar
-  state: installed
   args:
     chdir: /app
 
