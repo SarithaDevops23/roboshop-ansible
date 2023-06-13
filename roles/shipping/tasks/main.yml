@@ -9,11 +9,12 @@
     tasks_from: application_presetup
 
 - name: maven clean package
-  ansible.builtin.shell: mvn clean package 
-
+  ansible.builtin.shell: mvn clean package
+  args:
+    chdir: /app
 
 - name: install dependencies
-  ansible.builtin.shell: target/{{ component }}-1.0.jar
+  ansible.builtin.shell: mv target/shipping-1.0.jar shipping.jar 
   args:
     chdir: /app
 
