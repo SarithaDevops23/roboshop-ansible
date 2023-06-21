@@ -3,14 +3,14 @@
     "",
     "\\roles",
     "\\roles\\common",
-    "\\roles\\common\\files",
+    "\\roles\\common\\tasks",
     "\\roles\\frontend",
     "\\roles\\frontend\\files",
+    "\\roles\\frontend\\tasks",
     "\\roles\\payment",
     "\\roles\\payment\\files",
-    "\\roles\\redis\\vars",
     "\\roles\\shipping"
   ],
-  "SelectedNode": "\\roles\\payment\\files\\payment.service",
+  "SelectedNode": "\\roles\\common\\tasks\\systemd.yml",
   "PreviewInSolutionExplorer": false
 }
