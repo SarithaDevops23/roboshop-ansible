@@ -32,7 +32,7 @@
   ansible.builtin.shell: mysql -h mysql-dev.devops23.store -uroot -pRoboShop@1 < /app/schema/shipping.sql
 
 
-- name: importing systemd role
+- name: restart shipping
   ansible.builtin.systemd:
-   name: "shipping"
+   name: shipping
    state: restarted
