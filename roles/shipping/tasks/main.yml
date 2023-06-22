@@ -18,10 +18,18 @@
   args:
     chdir: /app
 
-- name: importing systemd role
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: systemd
+- name: Copy service file 
+  ansible.builtin.copy:
+    src: "shipping.service"
+    dest: /etc/systemd/system/shipping.service
+
+- name: enable and restart {{ component }}
+  ansible.builtin.systemd:
+    name: "shipping"
+    state: started
+    enabled: true
+    daemon-reload: true
+
 
 - name: installing mysql community version
   ansible.builtin.yum:

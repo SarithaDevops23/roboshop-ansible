@@ -4,13 +4,13 @@
     "\\roles",
     "\\roles\\common",
     "\\roles\\common\\tasks",
-    "\\roles\\frontend",
-    "\\roles\\frontend\\files",
-    "\\roles\\frontend\\tasks",
-    "\\roles\\payment",
-    "\\roles\\payment\\files",
-    "\\roles\\shipping"
+    "\\roles\\mysql\\files",
+    "\\roles\\mysql\\tasks",
+    "\\roles\\mysql\\vars",
+    "\\roles\\shipping",
+    "\\roles\\shipping\\files",
+    "\\roles\\shipping\\tasks"
   ],
-  "SelectedNode": "\\roles\\common\\tasks\\systemd.yml",
+  "SelectedNode": "\\roles\\shipping\\files\\shipping.service",
   "PreviewInSolutionExplorer": false
 }
