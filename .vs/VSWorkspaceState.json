@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\roles",
-    "\\roles\\common",
-    "\\roles\\common\\tasks",
-    "\\roles\\payment",
-    "\\roles\\payment\\files",
-    "\\roles\\payment\\tasks",
-    "\\roles\\shipping",
-    "\\roles\\shipping\\files",
-    "\\roles\\shipping\\tasks"
+    ""
   ],
-  "SelectedNode": "\\roles\\common\\tasks\\systemd.yml",
+  "SelectedNode": "\\C:\\Users\\user\\Source\\Repos\\roboshop-ansible",
   "PreviewInSolutionExplorer": false
 }
