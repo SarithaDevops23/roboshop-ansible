@@ -4,12 +4,12 @@ Description=Payment Service
 [Service]
 User=root
 WorkingDirectory=/app
-Environment=CART_HOST=cart-dev.devops23.store
-Environment=CART_PORT=8080
-Environment=USER_HOST=user-dev.devops23.store
-Environment=USER_PORT=8080
-Environment=AMQP_HOST=rabbitmq-dev.devops23.store
-Environment=AMQP_USER=roboshop
+Environment=CART_HOST={{ lookup('amazon.aws.aws_ssm','roboshop.dev.payment.cart_host', region='us-east-1') }}
+Environment=CART_PORT={{ lookup('amazon.aws.aws_ssm','roboshop.dev.payment.cart_port', region='us-east-1') }}
+Environment=USER_HOST={{ lookup('amazon.aws.aws_ssm','roboshop.dev.payment.user_host', region='us-east-1') }}
+Environment=USER_PORT={{ lookup('amazon.aws.aws_ssm','roboshop.dev.payment.user_port', region='us-east-1') }}
+Environment=AMQP_HOST={{ lookup('amazon.aws.aws_ssm','roboshop.dev.payment.amqp_host', region='us-east-1') }}
+Environment=AMQP_USER={{ lookup('amazon.aws.aws_ssm','roboshop.dev.payment.amqp_user', region='us-east-1') }}
 Environment=AMQP_PASS=roboshop123
 
 ExecStart=/usr/local/bin/uwsgi --ini payment.ini
