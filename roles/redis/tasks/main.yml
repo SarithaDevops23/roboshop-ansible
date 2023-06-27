@@ -13,17 +13,15 @@
     state: installed
 
 
-- name: replacing redis local address to 0.0.0.0 in redis.conf
+- name: replacing redis local address to 0.0.0.0 in redis.conf and redis/redis.conf
   ansible.builtin.replace:
-    path: /etc/redis.conf 
+    path: "{{ item }}"
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
+    loop:
+        - /etc/redis.conf
+        - /etc/redis/redis.conf
     
-- name: replacing redis local address to 0.0.0.0 in redis.conf 2
-  ansible.builtin.replace:
-    path: /etc/redis/redis.conf
-    regexp: '127.0.0.1'
-    replace: '0.0.0.0'
 
 - name: enable and restart redis
   ansible.builtin.systemd:
