@@ -1,5 +1,5 @@
 - name: copy elastic.repo file (take from elk server )
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: elastic.repo
     dest: /etc/yum.repos.d/elastic.repo
 
