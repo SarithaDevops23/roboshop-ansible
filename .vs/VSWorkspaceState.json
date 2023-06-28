@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\roles",
+    "\\roles\\dispatch\\templates",
+    "\\roles\\mysql\\tasks",
+    "\\roles\\redis",
+    "\\roles\\redis\\tasks"
   ],
-  "SelectedNode": "\\C:\\Users\\user\\Source\\Repos\\roboshop-ansible",
+  "SelectedNode": "\\roles\\redis\\tasks\\main.yml",
   "PreviewInSolutionExplorer": false
 }

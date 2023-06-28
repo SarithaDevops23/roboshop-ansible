@@ -1,0 +1,14 @@
+- name: copy elastic.repo file (take from elk server )
+  ansible.builtin.copy:
+    src: elastic.repo
+    dest: /etc/yum.repos.d/elastic.repo
+
+- name: install filebeat
+  ansible.builtin.yum:
+    name: filebeat
+    state: installed
+
+- name: restart filebeat
+  ansible.builtin.systemd:
+    name: filebeat
+    state: restarted
