@@ -2,11 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\roles",
-    "\\roles\\dispatch\\templates",
-    "\\roles\\mysql\\tasks",
-    "\\roles\\redis",
-    "\\roles\\redis\\tasks"
+    "\\roles\\cart",
+    "\\roles\\cart\\tasks",
+    "\\roles\\common\\tasks",
+    "\\roles\\elk",
+    "\\roles\\elk\\templates",
+    "\\roles\\frontend",
+    "\\roles\\frontend\\tasks",
+    "\\roles\\frontend\\templates"
   ],
-  "SelectedNode": "\\roles\\redis\\tasks\\main.yml",
+  "SelectedNode": "\\roles\\elk\\templates\\logstash.conf",
   "PreviewInSolutionExplorer": false
 }
